@@ -2,8 +2,8 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/sign-in/*",
-      "destination": "/sign-in"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
