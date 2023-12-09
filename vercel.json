@@ -1,7 +1,5 @@
 {
-  "framework": {
-    "name": "vite"
-  },
+  "framework": "vite",
   "rewrites": [
     {
       "source": "/:path*",
