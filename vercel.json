@@ -1,4 +1,11 @@
 {
-  "framework": "vite",
-  "rewrites": []
+  "framework": {
+    "name": "vite"
+  },
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
 }
