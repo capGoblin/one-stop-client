@@ -1,8 +1,4 @@
 {
   "framework": "vite",
-  "rewrites": [
-    { "source": "/sign-in", "destination": "/index.html" },
-    { "source": "/sign-up", "destination": "/index.html" },
-    { "source": "/homepage", "destination": "/index.html" }
-  ]
+  "rewrites": []
 }
