@@ -1,16 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
-// import { editor } from "monaco-editor";
-// import * as monaco from "monaco-editor";
-// import * as Y from "yjs";
-// import { WebrtcProvider } from "y-webrtc";
+
 import { Socket, io } from "socket.io-client";
 
-// const ydocument = new Y.Doc();
-// const provider = new WebrtcProvider("monaco", ydocument);
-// const type = ydocument.getText("monaco");
 const SAVE_INTERVAL_MS = 2000;
-// const server_URL = process.env.SERVER_URL;
 
 type File = {
   name: string;

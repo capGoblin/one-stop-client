@@ -3,7 +3,6 @@ import toast, { Toaster } from "react-hot-toast";
 import io from "socket.io-client";
 import { v4 as uuidv4 } from "uuid";
 import { UserButton, useUser } from "@clerk/clerk-react";
-// import { config } from "dotenv";
 import useMeetStore from "../store";
 import BottomBar from "./BottomBar";
 import Draw from "./Draw";
@@ -12,12 +11,7 @@ import SideBar from "./SideBar";
 import TextEditor from "./TextEditor";
 import Video from "./Video";
 import Code from "./Code";
-// config();
-// const server_URL = process.env.SERVER_URL;
 
-// if (!server_URL) {
-//   throw new Error("SERVER_URL is not defined in the environment variables.");
-// }
 const socket = io("https://video-call-app-production-d4a0.up.railway.app");
 
 const VideoCall: React.FC = () => {
