@@ -18,8 +18,6 @@ const TOOLBAR_OPTIONS = [
 
 const SAVE_INTERVAL_MS = 2000;
 
-// const server_URL = process.env.SERVER_URL;
-
 function TextEditor({
   clickedIcon,
   user,
@@ -31,11 +29,6 @@ function TextEditor({
   const { editorValue, setEditorValue } = useMeetStore();
 
   useEffect(() => {
-    // if (!server_URL) {
-    //   throw new Error(
-    //     "SERVER_URL is not defined in the environment variables."
-    //   );
-    // }
     const socket = io("https://video-call-app-production-d4a0.up.railway.app");
 
     setSocket(socket);
@@ -48,8 +41,6 @@ function TextEditor({
     const body = document.querySelector("body");
     if (body) {
       if (clickedIcon === "FileText") {
-        // className={"h-14"}
-        // body.style.overflow = "hidden";
       } else {
         body.style.overflow = "auto"; // Reset to allow scrolling
       }
@@ -85,9 +76,6 @@ function TextEditor({
         if (response.ok) {
           const data = await response.json();
           console.log(data);
-          // if (fetchOnce) return;
-
-          // not to fetch and update empty data(which will be saved else)
           if (
             JSON.stringify(data.doc) ===
             JSON.stringify({ ops: [{ insert: "\n" }] })
@@ -95,7 +83,6 @@ function TextEditor({
             return;
           }
 
-          // not to fetch and update, if data already exists
           const del = quillRef.current?.getEditor().getContents();
           if (JSON.stringify(data.doc) === JSON.stringify(del)) {
             return;

@@ -15,11 +15,6 @@ const HomePage = ({
   joinRoom: (id: string) => void;
   user: string | null | undefined;
 }) => {
-  // const server_URL = process.env.SERVER_URL;
-
-  // if (!server_URL) {
-  //   throw new Error("SERVER_URL is not defined in the environment variables.");
-  // }
   const [roomId, setRoomId] = useState("");
   const [docIds, setDocIds] = useState<string[]>([]);
 
@@ -56,30 +51,6 @@ const HomePage = ({
             return [...uniqueIds];
           });
           console.log(docIds);
-          // if (fetchOnce) return;
-
-          // not to fetch and update empty data(which will be saved else)
-          // if (
-          //   JSON.stringify(data.doc) ===
-          //   JSON.stringify({ ops: [{ insert: "\n" }] })
-          // ) {
-          //   return;
-          // }
-
-          // not to fetch and update, if data already exists
-          // const del = quillRef.current?.getEditor().getContents();
-          // if (JSON.stringify(data.doc) === JSON.stringify(del)) {
-          //   return;
-          // }
-
-          // if (quillRef.current) {
-          //   console.log(quillRef.current.getEditor());
-
-          //   quillRef.current.getEditor().updateContents(data.doc);
-          //   console.log(quillRef.current.getEditor().getContents());
-          // }
-
-          // setDocumentData(data.doc);
         } else {
           console.error("Failed to fetch document");
         }
@@ -87,11 +58,8 @@ const HomePage = ({
         console.error("Error fetching document:", error);
       }
     };
-    // if (clickedIcon === "FileText") {
-    // console.log(quillRef.current?.getEditor().getContents());
+
     fetchDocument();
-    // setFetchOnce(true);
-    // }
   }, [clickedIcon, roomId, user]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

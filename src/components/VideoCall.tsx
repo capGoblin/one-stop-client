@@ -154,22 +154,7 @@ const VideoCall: React.FC = () => {
       localVideo.srcObject = null;
     }
 
-    // console.log(rtcPeerConnection);
-    // // console.log(localStream);
-    // if (rtcPeerConnection) {
-    //   rtcPeerConnection.close();
-    // }
-
     socket?.emit("leaveRoom", roomId);
-
-    // const remoteVideo = remoteVideoRef.current;
-    // if (remoteVideo) {
-    //   remoteVideo.srcObject = null;
-    // }
-    // const localVideo = localVideoRef.current;
-    // if (localVideo) {
-    //   localVideo.srcObject = null;
-    // }
 
     socket?.disconnect();
 
